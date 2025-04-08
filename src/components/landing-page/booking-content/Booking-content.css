@@ -1,0 +1,9 @@
+.booking-content {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    min-width: 688px;  /*needs to be fixed*/
+    min-height: 454px; /*needs to be fixed*/
+    flex-direction: column;
+    align-items: center;
+}

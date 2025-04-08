@@ -1,6 +1,6 @@
 import './App.css'
-import { Header } from './components/Header.tsx';
-import { MainContent } from './components/Main-content.tsx';
+import { Header } from './components/header/Header.tsx';
+import { MainContent } from './components/landing-page/main-content/Main-content.tsx';
 
 function App() {
 

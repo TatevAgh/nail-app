@@ -41,12 +41,14 @@
     button {
         padding: 0 1rem;
     }
+    button:hover {
+        background: rgb(100,93,83);
+        background: linear-gradient(130deg, rgba(100,93,83,1) 13%, rgba(108,101,91,0.9150253851540616) 32%, rgba(230,222,211,1) 100%);
+        color: #fdf6fb;
+        font-weight: bold;
+    }
+
 }
 
-button:hover {
-    background: rgb(100,93,83);
-    background: linear-gradient(130deg, rgba(100,93,83,1) 13%, rgba(108,101,91,0.9150253851540616) 32%, rgba(230,222,211,1) 100%);
-    color: #fdf6fb;
-    font-weight: bold;
-}
+
 

@@ -1,0 +1,107 @@
+.calendar-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 46.875rem;
+    min-height: 31.25rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: -1px -1px 20px 2px #6c655b;
+
+    .month {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.6rem 0.6rem;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+            padding: 0 1rem;
+
+        }
+    }
+
+    .month-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        span {
+            margin: 0 4rem;
+        }
+        p {
+            text-align: center;
+        }
+    }
+    .weekdays {
+        padding: 2rem;
+    }
+    .weekdays td {
+        text-align: center;
+        padding: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .weekdays td:hover {
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px #6c655b;
+    }
+    #today {
+        border: 1px solid #c3b8a4;
+        border-radius: 10px;
+        font-weight: 800;
+        color: #977b7b;
+    }
+    #today:hover {
+        color: transparent;
+        font-weight: normal;
+    }
+
+
+    .available:hover {
+        background: rgb(108,101,91);
+        background: linear-gradient(180deg, rgb(195, 184, 164) 3%, rgba(145, 128, 112, 0.22) 100%) !important;
+        border-radius: 10px;
+    }
+
+    .unavailable {
+        position: relative;
+        color: #726960;
+        font-weight: normal;
+    }
+
+    .unavailable:hover {
+        color: transparent;
+        font-weight: normal;
+    }
+
+    .unavailable:hover::before {
+        content: "Date is not available";
+        color: #635854;
+        font-size: 10px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    td.prev {
+        color: #aaa;
+    }
+    td.next {
+        color: #aaa;
+    }
+    td.current {
+        color: #726960;
+        font-weight: bold;
+    }
+
+    .selected {
+        color: white;
+        background: rgb(108,101,91);
+        background: linear-gradient(180deg, rgb(195, 184, 164) 3%, rgba(145, 128, 112, 0.22) 100%) !important;
+        border-radius: 10px;
+    }
+}

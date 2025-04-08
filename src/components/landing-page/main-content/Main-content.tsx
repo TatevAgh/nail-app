@@ -1,5 +1,5 @@
 import './Main-content.css';
-import { BookingContent } from './Booking-content.tsx';
+import { BookingContent } from '../booking-content/Booking-content.tsx';
 
 
 export function MainContent() {
