@@ -5,7 +5,7 @@ import inPersonNailConsultation from "../../../assets/img/inPersonNailConsultati
 import nailArtLessons from "../../../assets/img/nail-care.png";
 
 type ServiceOptionsProps = {
-    onServiceSelect: (service: string) => void;
+    onServiceSelect: (service: string | null) => void;
 };
 export function ServiceOptions({ onServiceSelect }: ServiceOptionsProps)  {
     const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -17,8 +17,13 @@ export function ServiceOptions({ onServiceSelect }: ServiceOptionsProps)  {
     ];
 
     const handleClick = (key: string) => {
-        setSelectedService(key);
-        onServiceSelect(key);
+        if (selectedService === key) {
+            setSelectedService(null);
+            onServiceSelect('');
+        } else {
+            setSelectedService(key);
+            onServiceSelect(key);
+        }
     };
 
     return (

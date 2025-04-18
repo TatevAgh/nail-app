@@ -17,13 +17,24 @@ type DateSelectProps = {
     const { year, month, monthList, weekDays, weeks, currentData, goToNextMonth, goToPrevMonth } = useCalendar();
     const [selectedDate, setSelectedDate] = useState<{ day: number, month: number, year: number } | null>(null);
 
-    const handleDateClick = (day: number, month: number, year: number, type: string) => {
-        if (type === 'unavailable') return;
+        const handleDateClick = (day: number, month: number, year: number, type: string) => {
+            if (type === 'unavailable') return;
 
-        const selected = { day, month, year };
-        setSelectedDate(selected);
-        onDateSelect(selected);
-    };
+            const clickedDate = { day, month, year };
+
+            if (
+                selectedDate &&
+                selectedDate.day === day &&
+                selectedDate.month === month &&
+                selectedDate.year === year
+            ) {
+                setSelectedDate(null);
+                onDateSelect({ day: 0, month: 0, year: 0 }); // or pass null, depending on how you handle it
+            } else {
+                setSelectedDate(clickedDate);
+                onDateSelect(clickedDate);
+            }
+        };
 
     return (
         <div className="calendar-content">
