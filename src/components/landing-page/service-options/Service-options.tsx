@@ -4,7 +4,10 @@ import nailArtConsultation from "../../../assets/img/nailArtConsultation.png";
 import inPersonNailConsultation from "../../../assets/img/inPersonNailConsultation.png";
 import nailArtLessons from "../../../assets/img/nail-care.png";
 
-export function ServiceOptions() {
+type ServiceOptionsProps = {
+    onServiceSelect: (service: string) => void;
+};
+export function ServiceOptions({ onServiceSelect }: ServiceOptionsProps)  {
     const [selectedService, setSelectedService] = useState<string | null>(null);
 
     const services = [
@@ -13,6 +16,11 @@ export function ServiceOptions() {
         { key: "nailArtLessons", name: "With Nail Design", img: nailArtLessons }
     ];
 
+    const handleClick = (key: string) => {
+        setSelectedService(key);
+        onServiceSelect(key);
+    };
+
     return (
         <div className="service-options-component">
             <h3>Service Options</h3>
@@ -20,8 +28,8 @@ export function ServiceOptions() {
                 {services.map((service) => (
                     <div
                         key={service.key}
+                        onClick={() => handleClick(service.key)}
                         className={`service-option ${selectedService === service.key ? "selected" : ""}`}
-                        onClick={() => setSelectedService(service.key)}
                     >
                         <img src={service.img} alt={service.name} className="service-icon" />
                         <p>{service.name}</p>

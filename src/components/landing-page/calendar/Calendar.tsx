@@ -4,16 +4,27 @@ import leftArrow from '../../../assets/img/angle_18991472.png';
 import rightArrow from '../../../assets/img/oie_27131325U7cGCXqE.png';
 import { useState } from 'react';
 
-export function Calendar() {
+type DateSelectProps = {
+    onDateSelect: (date: {
+        day: number;
+        month: number;
+        year: number;
+    }) => void;
+
+};
+
+    export function Calendar({onDateSelect}: DateSelectProps) {
     const { year, month, monthList, weekDays, weeks, currentData, goToNextMonth, goToPrevMonth } = useCalendar();
     const [selectedDate, setSelectedDate] = useState<{ day: number, month: number, year: number } | null>(null);
 
     const handleDateClick = (day: number, month: number, year: number, type: string) => {
         if (type === 'unavailable') return;
 
-        setSelectedDate({ day, month, year });
-        console.log("Selected Date:", { day, month, year });
+        const selected = { day, month, year };
+        setSelectedDate(selected);
+        onDateSelect(selected);
     };
+
     return (
         <div className="calendar-content">
             <div className="month">
