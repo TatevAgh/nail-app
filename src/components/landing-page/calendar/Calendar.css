@@ -97,11 +97,15 @@
         color: #726960;
         font-weight: bold;
     }
+    td.selected {
+        color: #726960;
+        font-weight: bold;
+    }
 
     .selected {
         color: white;
         background: rgb(108,101,91);
-        background: linear-gradient(180deg, rgb(195, 184, 164) 3%, rgba(145, 128, 112, 0.22) 100%) !important;
+        background: linear-gradient(180deg,rgba(217, 141, 141, 1) 14%, rgba(230, 203, 179, 1) 100%);
         border-radius: 10px;
     }
 }

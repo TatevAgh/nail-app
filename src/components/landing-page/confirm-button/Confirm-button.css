@@ -14,7 +14,7 @@
         border-radius: 15px;
         border: none;
         /*background-color: #9180707F;*/
-        background: linear-gradient(8deg, rgb(195, 184, 164) 3%, rgba(145, 128, 112, 0.22) 100%) !important;
+        background: linear-gradient(180deg,rgba(242, 222, 199, 1) 50%, rgba(230, 203, 179, 1) 100%);
         font-size: 1rem;
         font-weight: bold;
         cursor: pointer;

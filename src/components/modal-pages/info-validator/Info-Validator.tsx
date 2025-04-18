@@ -16,7 +16,7 @@ export function InfoValidator({ isOpen, onClose, invalidFields }: ModalProps) {
         <div className="modal-overlay" onClick={onClose}>
             <div
                 className="modal-content"
-                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
+                onClick={(e) => e.stopPropagation()}
             >
                 <button className="modal-close" onClick={onClose}>
                     ×
