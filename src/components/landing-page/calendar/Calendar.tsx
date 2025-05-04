@@ -69,7 +69,7 @@ type DateSelectProps = {
 
                             return (
                                 <td key={day}
-                                    className={`${dateInfo?.isFuture ? dateInfo?.type : 'unavailable'} ${isSelected ? 'selected' : ''}`}
+                                    className={`${dateInfo?.isFuture ? dateInfo?.type : 'unavailable'} ${isSelected &&  dateInfo?.type === 'current' ? 'selected' : ''}`}
                                     onClick={() => dateInfo?.isFuture && handleDateClick(dateInfo?.day, month, year, dateInfo?.type)}
                                     id={(dateInfo?.day === currentData.currentDay
                                         && dateInfo?.type === 'current'
