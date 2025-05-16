@@ -1,5 +1,16 @@
 #root {
   width: 100%;
   margin: 0;
+  /*background: #ddd6f3;  !* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(to right, #faaca8, #ddd6f3);  !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to right, #faaca8, #ddd6f3); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+
+  background: #fff8e7;
+  /*background: linear-gradient(180deg,rgba(247, 242, 237, 1) 19%, rgba(237, 205, 173, 1) 78%);*/
+
+  /*background: #ee9ca7; !* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(to right, #ee9ca7, #ffdde1); !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to right, #ee9ca7, #ffdde1); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+  /*background: linear-gradient(180deg,rgba(230, 218, 202, 1) 0%, rgba(227, 199, 197, 1) 25%, rgba(217, 170, 167, 1) 50%, rgba(227, 199, 197, 0.73) 85%, rgba(230, 218, 202, 0.59) 100%);*/
 }
 

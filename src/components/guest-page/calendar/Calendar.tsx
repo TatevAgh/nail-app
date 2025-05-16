@@ -37,19 +37,22 @@ type DateSelectProps = {
         };
 
     return (
-        <div className="calendar-content">
-            <div className="month">
+        //change width and height in future
+        <div className="calendar-content flex justify-evenly flex-col my-8 rounded-xl shadow-[-1px_-1px_20px_2px_#6c655b] min-w-[46.875rem] min-h-[31.25rem]">
+            <div className="month flex flex-row align-center justify-around m-[0.6rem] p-[0.6rem]">
                 <span className="prev" onClick={goToPrevMonth}>
-                    <img src={leftArrow} alt="Previous" />
+                    <img className='w-[2rem] h-[2rem]' src={leftArrow} alt="Previous"/>
                 </span>
-                <p>
+                <span>
+                    <p>
                     {monthList[month]} <span>{year}</span>
-                </p>
+                    </p>
+                </span>
                 <span className="next" onClick={goToNextMonth}>
-                    <img src={rightArrow} alt="Next" />
+                    <img  className='w-[2rem] h-[2rem]' src={rightArrow} alt="Next"/>
                 </span>
             </div>
-            <table className="weekdays">
+            <table className="weekdays p-[2rem]">
                 <thead>
                 <tr>
                     {weekDays.map((day: string) => (
@@ -66,10 +69,19 @@ type DateSelectProps = {
                                 dateInfo?.day === selectedDate.day &&
                                 month === selectedDate.month &&
                                 year === selectedDate.year && dateInfo?.isFuture;
+                            const isToday = dateInfo?.day === currentData.currentDay
+                                && dateInfo?.type === 'current'
+                                && currentData.currentMonth === month
+                                && currentData.currentYear === year;
+                            console.log(isToday)
 
                             return (
-                                <td key={day}
-                                    className={`${dateInfo?.isFuture ? dateInfo?.type : 'unavailable'} ${isSelected &&  dateInfo?.type === 'current' ? 'selected' : ''}`}
+                                <td  key={day}
+                                    className={`
+                                     text-center p-4 transition-colors duration-300  
+                                     ${dateInfo?.isFuture ? dateInfo?.type : 'relative text-[#726960]'}
+                                     ${isSelected && dateInfo?.type === 'current' ? 'selected' : ''}
+                                     ` }
                                     onClick={() => dateInfo?.isFuture && handleDateClick(dateInfo?.day, month, year, dateInfo?.type)}
                                     id={(dateInfo?.day === currentData.currentDay
                                         && dateInfo?.type === 'current'
@@ -86,6 +98,6 @@ type DateSelectProps = {
             </table>
         </div>
     );
-}
+    }
 
 export default Calendar;

@@ -1,4 +1,3 @@
-import './Booking-content.css';
 import Calendar from '../calendar/Calendar.tsx';
 import { TimeSlots } from '../time-slots/Time-slots.tsx';
 import { ArtistContent } from '../artist-content/Artist-content.tsx';
@@ -15,9 +14,6 @@ type InvalidFieldsModel = Partial<{
 
 export function BookingContent() {
     const {
-        date,
-        timeSlot,
-        service,
         setDate,
         setTimeSlot,
         setService,
@@ -34,13 +30,10 @@ export function BookingContent() {
         console.log(validationResult, 'validationResult');
         setInvalidFields(validationResult);
         setModalOpen(true);
-        console.log({date,
-            timeSlot,
-            service}, 'sssss');
     };
 
     return (
-        <div className="booking-content">
+        <div className="flex flex-col items-center justify-center py-8">
             <ArtistContent />
             <Calendar onDateSelect={setDate} />
             <TimeSlots onSlotSelect={setTimeSlot} />
